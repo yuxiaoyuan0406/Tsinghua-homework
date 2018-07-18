@@ -25,4 +25,4 @@ command = '0'
 while True:
     sleep(0.1)
     command = input('input command\n')
-    client.publish('/control/car/sudo', command)
+    client.publish('/control/car/do', command)
