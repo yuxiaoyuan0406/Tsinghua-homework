@@ -1,2 +1,2 @@
-#things from THU
+# things from THU
 mostly programs
