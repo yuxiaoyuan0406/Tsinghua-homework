@@ -2,7 +2,9 @@
 #include "mbed.h"
 
 Ticker ticker_step;
-DigitalOut step(PB_0), dir(PB_1), en(PC_13);
+//DigitalOut step(PB_0), dir(PB_1), en(PC_13);
+DigitalOut step(PA_7), dir(PB_4), en(PB_6);
+
 volatile int remain;
 
 double targetDistance = 30.0;										//目标距离（毫米）
