@@ -17,10 +17,10 @@ import threading
 import time
 from PIL import Image
 
+filename = "laser-6-4.JPG"
 
 def waitfile(NumofOnce, minvalue):
-    filename = "laser-6-4.JPG"
-    im = Image.open(filename)  # 打开图片
+    im = Image.open(filename).convert('L')  # 打开图片，并处理成灰度图
     print("get a picture,the info about filename, im.format, im.size, im.mode:")
     print(filename, im.format, im.size, im.mode)
     imL = im.convert("L")
@@ -76,12 +76,12 @@ def on_message(conn, userdata, msg):
         NewWork(conn)
         # 告诉设备，数据发送完
         print('all sent')
-        time.sleep(1)
+        time.sleep(2.0)
         conn.publish('/control/laser/cmd', "2", qos=1)
         print('end command sent')
     elif msg.payload == b'received.':
         print('数据接收完成')
-    elif msg.payload == 'done.':
+    elif msg.payload == b'done.':
         print('任务完成')
 
 
@@ -100,14 +100,16 @@ def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
 
 
-# waitfile(10, 30)  # 测试保存文件功能
+#waitfile("/home/dennis/Downloads/Tsinghua/laser_printer/final/image-2.jpg", 10, 60)  # 测试保存文件功能
+
 if __name__ == '__main__':
     client = mqtt.Client()
     client.on_connect = on_connect
     client.on_message = on_message
-    client.connect("192.168.1.100", 1883, 60)
+    client.connect("192.168.1.100", 1883, 30)
     client.subscribe('/values/laser/report', 1)
     client.loop_start()
     #time.sleep(1.5)
     while True:
         sleep(0.1)
+
