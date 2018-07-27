@@ -1,4 +1,4 @@
-('/home/dennis/Downloads/Tsinghua/laser_printer/final/build/build/GUI/out00-PYZ.pyz',
+('/home/dennis/Downloads/Tsinghua/laser_printer/final/build/GUI/out00-PYZ.pyz',
  [('os', '/usr/lib/python2.7/os.py', 'PYMODULE'),
   ('copy_reg', '/usr/lib/python2.7/copy_reg.py', 'PYMODULE'),
   ('types', '/usr/lib/python2.7/types.py', 'PYMODULE'),

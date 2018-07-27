@@ -3,8 +3,8 @@
 block_cipher = None
 
 
-a = Analysis(['../GUI.py'],
-             pathex=['/home/dennis/Downloads/Tsinghua/laser_printer/final/build'],
+a = Analysis(['GUI.py'],
+             pathex=['/home/dennis/Downloads/Tsinghua/laser_printer/final'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -26,4 +26,4 @@ exe = EXE(pyz,
           strip=False,
           upx=True,
           runtime_tmpdir=None,
-          console=True )
+          console=False )

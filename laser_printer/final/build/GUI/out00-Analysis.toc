@@ -1,6 +1,6 @@
-(['/home/dennis/Downloads/Tsinghua/laser_printer/final/GUI.py'],
+(['GUI.py'],
  ['/home/dennis/Downloads/Tsinghua/laser_printer/final',
-  '/home/dennis/Downloads/Tsinghua/laser_printer/final/build'],
+  '/home/dennis/Downloads/Tsinghua/laser_printer/final'],
  ['codecs'],
  [],
  [],
