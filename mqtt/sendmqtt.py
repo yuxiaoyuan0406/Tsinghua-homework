@@ -18,11 +18,11 @@ def on_message(client, userdata, msg):
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
-client.connect("192.168.1.100", 1883, 60)
+client.connect("192.168.1.101", 1883, 60)
 client.loop_start()
 sleep(0.1)
 command = '0'
-watch_topic='/values/laser/report'
+watch_topic='/values/laser/#'
 command_topic='/control/laser/cmd'
 while True:
     sleep(0.1)

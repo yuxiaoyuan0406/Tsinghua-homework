@@ -82,7 +82,7 @@ def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
 
 waitfile(10,30); #测试保存文件功能
-
+'''
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
@@ -91,3 +91,5 @@ client.subscribe('/values/laser/report', 1)
 client.loop_start()
 while True:
     sleep(0.1)
+'''
+

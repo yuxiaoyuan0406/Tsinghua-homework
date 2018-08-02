@@ -106,7 +106,7 @@ if __name__ == '__main__':
     client = mqtt.Client()
     client.on_connect = on_connect
     client.on_message = on_message
-    client.connect("192.168.1.100", 1883, 30)
+    client.connect("192.168.1.101", 1883, 30)
     client.subscribe('/values/laser/report', 1)
     client.loop_start()
     #time.sleep(1.5)

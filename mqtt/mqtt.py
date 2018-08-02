@@ -7,14 +7,46 @@ def on_connect(client, userdata, flags, rc):
     # Subscribing in on_connect() means that if we lose the connection and
     # reconnect then subscriptions will be renewed.
     # client.subscribe("/control/car/sudo")
+    subscribeList=(
+        '/control/car/sudo', 
+        '/control/line/go', 
+        '/values/laser/report', 
+        '/value/laser/#', 
+        '/control/mechanicalarm/create', 
+        '/values/mechanicalarm/report', 
+        '/control/robotarm/move', 
+        '/control/robotarm/command', 
+        '/values/robotarm/report', 
+        '/control/warehouse/dat', 
+        '/control/warehouse/command', 
+        '/values/warehouse/report'
+    )
+    for topic in subscribeList:
+        client.subscribe(topic, 1)
+    '''
     client.subscribe("/control/car/sudo")
+
+    client.subscribe('/control/line/go', 1)
+
     client.subscribe('/values/laser/report', 1)
     client.subscribe('/value/laser/#', 1)
 
+    client.subscribe('/control/mechanicalarm/create', 1)
+    client.subscribe('/values/mechanicalarm/report', 1)
+
+    client.subscribe('/control/robotarm/move', 1)
+    client.subscribe('/control/robotarm/command', 1)
+    client.subscribe('/values/robotarm/report', 1)
+
+
+    client.subscribe('/control/Warehouse/open', 1)
+    client.subscribe('/values/Warehouse/report', 1)
+    '''
+
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
-    #print(msg.topic+" "+str(msg.payload))
-    print(msg.payload)
+    print(msg.topic+" "+str(msg.payload))
+    #print(msg.payload)
 
 client = mqtt.Client()
 client.on_connect = on_connect

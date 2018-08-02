@@ -1,0 +1,4 @@
+Esc: Caps Lock;
+Caps Lock: Esc;
+PrtSc: Insert;
+Insert: PrtSc;
