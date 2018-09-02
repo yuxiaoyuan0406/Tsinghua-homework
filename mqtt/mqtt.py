@@ -8,17 +8,25 @@ def on_connect(client, userdata, flags, rc):
     # reconnect then subscriptions will be renewed.
     # client.subscribe("/control/car/sudo")
     subscribeList=(
-        '/control/car/sudo', 
+        '/values/car/#', 
+        '/control/car/command', 
+        '/control/car/dat', 
+        '/capability/car/values', 
+        '/capibility/car/control', 
         '/control/line/go', 
-        '/values/laser/report', 
-        '/value/laser/#', 
+        '/values/laser/#', 
+        '/control/laser/#', 
+        '/control/mechanicalarm/#', 
         '/control/mechanicalarm/create', 
         '/values/mechanicalarm/report', 
+        '/control/robotarm/#', 
         '/control/robotarm/move', 
         '/control/robotarm/command', 
         '/values/robotarm/report', 
         '/control/warehouse/dat', 
         '/control/warehouse/command', 
+        '/control/warehouse/#', 
+        '/values/warehouse/#', 
         '/values/warehouse/report'
     )
     for topic in subscribeList:
